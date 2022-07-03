@@ -1,0 +1,6 @@
+.auctions {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 20px;
+}

@@ -1,0 +1,20 @@
+.profile {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.user-info {
+}
+
+.user-auctions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-auctions-created {
+  width: 45%;
+}
+
+.user-auctions-bids {
+  width: 45%;
+}

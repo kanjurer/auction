@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.navbar-options {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
