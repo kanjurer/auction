@@ -5,10 +5,14 @@ import { Button, Form, Input } from "antd";
 function SignUp() {
   const onFinish = (values: any) => {
     console.log("Success:", values);
+
+    // send POST request here to backend
   };
 
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
+
+    // if the form throws error
   };
 
   return (
@@ -24,6 +28,22 @@ function SignUp() {
         autoComplete="off"
         className="signup-form"
       >
+        <Form.Item
+          label="First Name"
+          name="firstName"
+          rules={[{ required: true, message: "Please input your first name!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Last Name"
+          name="lastName"
+          rules={[{ required: true, message: "Please input your last name!" }]}
+        >
+          <Input />
+        </Form.Item>
+
         <Form.Item
           label="Username"
           name="username"

@@ -1,6 +1,14 @@
 import "./Auction.css";
 
-import { Avatar, Card, Modal, InputNumber, Button, notification } from "antd";
+import {
+  Avatar,
+  Card,
+  Modal,
+  InputNumber,
+  Button,
+  notification,
+  Descriptions,
+} from "antd";
 import { useState } from "react";
 
 import { IAuction } from "../../utils/interfaces";
@@ -18,6 +26,8 @@ function Auction({ auction }: AuctionProps) {
     auctionCurrentBid,
     auctionCreator,
     auctionMinimumIncrement,
+    auctionId,
+    auctionImage,
   } = auction;
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [bidValue, setBidValue] = useState<number>(auctionCurrentBid);
@@ -50,12 +60,7 @@ function Auction({ auction }: AuctionProps) {
       <Card
         className="auction-card"
         onClick={showModal}
-        cover={
-          <img
-            alt="example"
-            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-          />
-        }
+        cover={<img alt="example" src={auctionImage} />}
       >
         <Meta
           avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
@@ -88,14 +93,22 @@ function Auction({ auction }: AuctionProps) {
           </Button>,
         ]}
       >
-        <img
-          alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-          width="100%"
-        />
-        <p>{auctionDescription}</p>
-
-        <p>Auction Created By: {auctionCreator}</p>
+        <img alt="example" src={auctionImage} width="100%" />
+        <Descriptions title="Auction Info" layout="vertical" bordered>
+          <Descriptions.Item label="Auction Name">
+            {auctionName}
+          </Descriptions.Item>
+          <Descriptions.Item label="Auction Creator">
+            {auctionCreator}
+          </Descriptions.Item>
+          <Descriptions.Item label="Auction ID">{auctionId}</Descriptions.Item>
+          <Descriptions.Item label="Auction Current Bid">
+            {auctionCurrentBid}
+          </Descriptions.Item>
+          <Descriptions.Item label="Auction Minimum Increment">
+            {auctionMinimumIncrement}
+          </Descriptions.Item>
+        </Descriptions>
       </Modal>
     </>
   );

@@ -40,17 +40,11 @@ function AddAuctionForm() {
       <Form.Item label="Auction Name">
         <Input />
       </Form.Item>
-      <Form.Item label="Select">
-        <Select>
-          <Select.Option value="demo">Demo</Select.Option>
-        </Select>
-      </Form.Item>
-
       <Form.Item label="Sell Price">
-        <InputNumber />
+        <InputNumber min={10} />
       </Form.Item>
       <Form.Item label="Minimum Increment">
-        <InputNumber />
+        <InputNumber min={5} />
       </Form.Item>
       <Form.Item label="Description of the Product">
         <TextArea rows={4} />

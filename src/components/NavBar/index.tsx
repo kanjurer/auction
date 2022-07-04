@@ -3,17 +3,21 @@ import "./NavBar.css";
 import { Layout, Dropdown, Typography, Space, Menu } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { IUser } from "../../utils/interfaces";
 
 interface NavBarProps {
-  user: string;
+  user: IUser;
 }
 
 function NavBar({ user }: NavBarProps) {
+  const LogOut = () => {
+    // logout user here
+  };
   return (
     <nav className="navbar">
       <h2>Auction</h2>
       <div className="navbar-options">
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/auctions">Auctions</Link>
         <Link to="/addAuction">Add Auction</Link>
         <Dropdown
@@ -24,7 +28,7 @@ function NavBar({ user }: NavBarProps) {
                   <Link to="/profile">
                     <Menu.Item>Profile</Menu.Item>
                   </Link>
-                  <Menu.Item>Log Out</Menu.Item>
+                  <Menu.Item onClick={LogOut}>Log Out</Menu.Item>
                 </Link>
               ) : (
                 <>

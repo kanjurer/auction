@@ -1,6 +1,6 @@
 import {} from "antd";
 
 function PageFooter() {
-  return <div>This is page footer</div>;
+  return <div>All rights reserved.</div>;
 }
 export default PageFooter;

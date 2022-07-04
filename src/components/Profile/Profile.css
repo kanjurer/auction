@@ -4,9 +4,17 @@
 }
 
 .user-info {
+  width: 70%;
+  margin: 2px auto;
+  border: 2px solid black;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .user-auctions {
+  margin: 2px auto;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 }
@@ -17,4 +25,8 @@
 
 .user-auctions-bids {
   width: 45%;
+}
+
+.auction-card {
+  margin: 10px;
 }
